@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            @media (min-width: 600px){
+                a {
+                font-family: Noto sans;
+                color: #FAF9F6;
+                }
+                a:hover {
+                    color: #0077b6;
+                }
+                button {
+                    font-family: Noto serif;
+                    font-size: 1em;
+                    color:#FAF9F6;
+                    background: #03045e;
+                    border-color: #03045e;
+                    padding: 1rem 1rem;
+                    border-radius: 20px;
+                }
+                button:hover {
+                    color: #ffffff;
+                    background: #0077b6;
+                    border-color: #0077b6;
+                    cursor: pointer;
+                }
+                .h1-otsikko {
+                    color: #121212;
+                    font-size: 3rem;
+                }
+
+
+                body {
+                    background-color: #d7e3fc;
+                    margin: 0;
+                }
+                #header {
+                    padding: 1rem 2rem;
+                    margin: 0;
+                    background-color: #03045e;
+                    color: #FAF9F6;
+                    display: flex;
+                    align-items: center;
+                }
+                #site-title {
+                    font-size: 2.2rem;
+                }
+                #header-right {
+                    margin-left: auto;
+                    margin-right: 4rem;
+                }
+                .site-nav {
+                    display: flex;
+                    gap: 2rem;
+                    font-size: 1.25rem;
+                }
+
+
+                .sivupohja {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 1.2rem;
+                }
+
+
+                .tapahtuma-box-grid {
+                    padding: 2rem 4rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 3rem;
+                }
+
+                
+                .tapahtuma-box-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: #FAF9F6;
+                }
+                .tapahtuma-box-title {
+                    background-color: #03045e;
+                    color: #FAF9F6;
+                    padding: 0.5rem 1rem;
+                }
+                .tapahtuma-link {
+                    font-size: 1.5rem;
+                    padding: 0 0.5rem;
+                }
+                .tapahtuma-box-kuvaus {
+                    font-family: Noto serif;
+                    padding: 0 1rem;
+                    width: 25rem;
+                }
+                .tapahtuma-box-button{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            
+
+            @media (max-width: 600px) {
+                a {
+                font-family: Noto sans;
+                color: #FAF9F6;
+                }
+                a:hover {
+                    color: #0077b6;
+                }
+                button {
+                    font-family: Noto serif;
+                    font-size: 1em;
+                    color:#FAF9F6;
+                    background: #03045e;
+                    border-color: #03045e;
+                    padding: 1rem 1rem;
+                    border-radius: 20px;
+                }
+                button:hover {
+                    color: #ffffff;
+                    background: #0077b6;
+                    border-color: #0077b6;
+                    cursor: pointer;
+                }
+                .h1-otsikko {
+                    color: #121212;
+                    font-size: 3rem;
+                }
+
+
+                body {
+                    background-color: #d7e3fc;
+                    margin: 0;
+                }
+                #header {
+                    background-color: #03045e;
+                    color: #FAF9F6;
+                    display: flex;
+                    width: 100%;
+                }
+                #site-title {
+                    font-size: 2.2rem;
+                    margin-left: 1rem;
+                }
+                #header-right {
+                    display: none;
+                }
+                .site-nav {
+                    display: flex;
+                    gap: 2rem;
+                    font-size: 1.25rem;
+                }
+
+
+                .sivupohja {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 1.2rem;
+                }
+                .h1-otsikko {
+                    font-size: 2.5rem;
+                }
+                .tapahtuma-box-grid {
+                    padding: 0rem 0.5rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    row-gap: 2rem;
+                }
+
+                
+                .tapahtuma-box-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: #FAF9F6;
+                    
+                }
+                .tapahtuma-box-title {
+                    background-color: #03045e;
+                    color: #FAF9F6;
+                    padding: 0.5rem 0 0.5rem 0.5rem;
+                }
+                .tapahtuma-link {
+                    font-size: 1.4rem;
+                    padding: 0 0.5rem;
+                }
+                .tapahtuma-box-kuvaus {
+                    font-family: Noto serif;
+                    padding: 0 0.5rem;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                    word-break: break-word;
+                    
+                }
+                .tapahtuma-box-button{
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div id="header-left">
+                <h1 id="site-title">Tuppukylä</h1>
+            </div>
+            <div id="header-right">
+                <nav class="site-nav">
+                    <a href="">Etusivu</a>
+                    <a href="">Tapahtumat</a>
+                    <a href="">Tietoa kylästä</a>
+                    <a href="">Yhteystiedot</a>
+                </nav>
+            </div>
+        </div>
+        <div class="sivupohja">
+            <h1 class="h1-otsikko">Tapahtumat</h1>
+            <div class="tapahtuma-box-grid">
+
+                <div class="tapahtuma-box-item">
+                    <div class="tapahtuma-box-title">
+                        <a class="tapahtuma-link" href="./juhannustanssit.html">Juhannustanssit</a>
+                    </div>
+                    <div class="tapahtuma-box-kuvaus">
+                        <p>Tervetuloa jokavuotisiin juhannustansseihin kylätalolle.</p>
+                        <p>Sisäänpääsy 5€</p>
+                        <p>31.11.2026 Klo 15.00</p> 
+                        <p>Tuppukyläntie 67, 28135 Tuppukylä</p>
+                    </div>
+                    <div class="tapahtuma-box-button">
+                        <button class="tapahtuma-button"
+                            style="margin-bottom: 1em;"
+                            onclick="document.location='juhannustanssit.html'">
+                            Tahtuman tiedot
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tapahtuma-box-item">
+                    <div class="tapahtuma-box-title">
+                        <a class="tapahtuma-link" href="./juhannustanssit.html">Juhannustanssit</a>
+                    </div>
+                    <div class="tapahtuma-box-kuvaus">
+                        <p>Tervetuloa jokavuotisiin juhannustansseihin kylätalolle.</p>
+                        <p>Sisäänpääsy 5€</p>
+                        <p>31.11.2026 Klo 15.00</p> 
+                        <p>Tuppukyläntie 67, 28135 Tuppukylä</p>
+                    </div>
+                    <div class="tapahtuma-box-button">
+                        <button class="tapahtuma-button"
+                            style="margin-bottom: 1em;"
+                            onclick="document.location='juhannustanssit.html'">
+                            Tahtuman tiedot
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tapahtuma-box-item">
+                    <div class="tapahtuma-box-title">
+                        <a class="tapahtuma-link" href="./juhannustanssit.html">Juhannustanssit</a>
+                    </div>
+                    <div class="tapahtuma-box-kuvaus">
+                        <p>Tervetuloa jokavuotisiin juhannustansseihin kylätalolle.</p>
+                        <p>Sisäänpääsy 5€</p>
+                        <p>31.11.2026 Klo 15.00</p> 
+                        <p>Tuppukyläntie 67, 28135 Tuppukylä</p>
+                    </div>
+                    <div class="tapahtuma-box-button">
+                        <button class="tapahtuma-button"
+                            style="margin-bottom: 1em;"
+                            onclick="document.location='juhannustanssit.html'">
+                            Tahtuman tiedot
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tapahtuma-box-item">
+                    <div class="tapahtuma-box-title">
+                        <a class="tapahtuma-link" href="./juhannustanssit.html">Juhannustanssit</a>
+                    </div>
+                    <div class="tapahtuma-box-kuvaus">
+                        <p>Tervetuloa jokavuotisiin juhannustansseihin kylätalolle.</p>
+                        <p>Sisäänpääsy 5€</p>
+                        <p>31.11.2026 Klo 15.00</p> 
+                        <p>Tuppukyläntie 67, 28135 Tuppukylä</p>
+                    </div>
+                    <div class="tapahtuma-box-button">
+                        <button class="tapahtuma-button"
+                            style="margin-bottom: 1em;"
+                            onclick="document.location='juhannustanssit.html'">
+                            Tahtuman tiedot
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

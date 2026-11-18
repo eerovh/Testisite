@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            input:focus, button:focus, a:focus  {
+                outline: 0.3rem solid orange;
+            }
+            @media (min-width: 750px) {
+                a {
+                font-family: Noto sans;
+                color: #FAF9F6;
+                }
+                a:hover {
+                    color: #0077b6;
+                }
+                .h1-otsikko {
+                    color: #121212;
+                    font-size: 3rem;
+                }
+
+
+                body {
+                    background-color: #d7e3fc;
+                    margin: 0;
+                }
+                #header {
+                    padding: 1rem 2rem;
+                    margin: 0;
+                    background-color: #03045e;
+                    color: #FAF9F6;
+                    display: flex;
+                    align-items: center;
+                }
+                #site-title {
+                    font-size: 2.2rem;
+                }
+                #header-right {
+                    margin-left: auto;
+                    margin-right: 4rem;
+                }
+                .site-nav {
+                    display: flex;
+                    gap: 2rem;
+                    font-size: 1.25rem;
+                }
+                button {
+                    font-family: Noto serif;
+                    font-size: 1em;
+                    color:#FAF9F6;
+                    background: #03045e;
+                    border-color: #03045e;
+                    padding: 1rem 1rem;
+                    border-radius: 20px;
+                }
+                button:hover {
+                    color: #ffffff;
+                    background: #0077b6;
+                    border-color: #0077b6;
+                    cursor: pointer;
+                }
+
+
+                .sivupohja {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 1.2rem;
+                }
+                .tapahtuma-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .tapahtuma-kuvaus, .tapahtuma-hinta, .tapahtuma-osoite, .ilmoitus-tiedot  {
+                    font-family: Noto serif;
+                    max-width: 40rem;
+                }
+                .ilmoitus-tiedot {
+                    margin: 0 0 0.5rem 0;
+                }
+                .form-label {
+                    margin: 0.5rem 0 0.2rem 0;
+                }
+                #ilmoittautumisen-tila {
+                    font-family: Noto serif;
+                    max-width: 40rem;
+                    color: #121212;
+                    border-radius: 1rem;
+                    border-color: red;
+                }
+            }
+            @media (max-width: 750px) {
+                button {
+                    font-family: Noto serif;
+                    font-size: 1em;
+                    color:#FAF9F6;
+                    background: #03045e;
+                    border-color: #03045e;
+                    padding: 1rem 1rem;
+                    border-radius: 20px;
+                }
+                button:hover {
+                    color: #ffffff;
+                    background: #0077b6;
+                    border-color: #0077b6;
+                    cursor: pointer;
+                }
+                body {
+                    background-color: #d7e3fc;
+                    margin: 0;
+                }
+                #header {
+                    background-color: #03045e;
+                    color: #FAF9F6;
+                    display: flex;
+                    width: 100%;
+                }
+                #site-title {
+                    font-size: 2.2rem;
+                    margin-left: 1rem;
+                }
+                #header-right {
+                    display: none;
+                }
+                .site-nav {
+                    display: flex;
+                    gap: 2rem;
+                    font-size: 1.25rem;
+                }
+                
+                .sivupohja {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 1.2rem;
+                    padding: 1rem 1rem;
+                }
+                .tapahtuma-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .tapahtuma-kuvaus, .tapahtuma-hinta, .tapahtuma-osoite, .ilmoitus-tiedot  {
+                    font-family: Noto serif;
+                    max-width: 40rem;
+                }
+                .ilmoitus-tiedot {
+                    margin: 0 0 0.5rem 0;
+                }
+                .form-label {
+                    margin: 0.5rem 0 0.2rem 0;
+                }
+                #ilmoittautumisen-tila {
+                    font-family: Noto serif;
+                    max-width: 40rem;
+                    color: #121212;
+                    border-radius: 1rem;
+                    border-color: red;
+                }
+            }
+            
+        </style>
+        <script>
+            function ilmoitaTila() {
+                document.getElementById("ilmoitus").innerHTML = "";
+                var para = document.createElement("p");
+                var ilmoitus ="";
+                para.setAttribute("id", "ilmoittautumisen-tila");
+                var koko = document.getElementById("koko").value;
+                var ruoka = document.getElementById("ruokavalio").value;
+                var tanssi = document.getElementById("tanssi").value;
+                if (koko == "" ) {
+                    para.setAttribute("style", "color:red;");
+                    ilmoitus = ilmoitus +"VIRHE: Serueen koko-kenttä ei voi olla tyhjä! Syötä koko numerona.";
+                }
+                else {
+                    ilmoitus = "Ilmoittautuminen onnistui tiedoilla: <br>"+
+                    "Seurueen koko: "+koko+"<br>"+
+                    "Erityisruokavaliot: "+ruoka+ "<br>"+
+                    "Lempitanssi: "+tanssi;
+                }
+                    para.innerHTML= ilmoitus;
+                document.getElementById("ilmoitus").appendChild(para);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <div id="header-left">
+                <h1 id="site-title">Tuppukylä</h1>
+            </div>
+            <div id="header-right">
+                <nav class="site-nav">
+                    <a href="">Etusivu</a>
+                    <a href="./tapahtumat.html">Tapahtumat</a>
+                    <a href="">Tietoa kylästä</a>
+                    <a href="">Yhteystiedot</a>
+                </nav>
+            </div>
+        </div>
+        <div class="sivupohja">
+            <h1 class="h1-otsikko">Juhannustanssit</h1>
+            <div class="tapahtuma-box">
+                <p class="tapahtuma-kuvaus">
+                    Tervetuloa jokavuotisiin juhannustansseihimme kylätalolle!
+                    Tule mukaan tanssimaan, juhlimaan ja pitämään hauskaa kyläläisten
+                    kanssa. Kaikki ovat tervetulleita taidoista riippumatta. Ei
+                    ole pakko tanssia, on myös muuta ohjelmaa.<br>
+                    Tarjolla on pientä naposteltavaa.
+                    Kerrothan ruokavaliosi, jotta osaamme varautua.</p>
+                <p class="tapahtuma-kuvaus">Lisätietoja voi kysyä järjestön sihteeriltä, jonka yhteystiedot
+                    löytyvät <a style="color:#0077b6;" href="">täältä</a>.
+                </p>
+                <p class="tapahtuma-hinta">Sisäänpääsymaksu on 5 euroa.</p>
+                <p class="tapahtuma-osoite">Osoite: Tuppukyläntie 67, 28135 Tuppukylä</p>
+                
+                <h2 class="ilmoittautuminen-label" style="margin-bottom: 0;">
+                    Ilmoittautuminen</h2>
+                <p class="ilmoitus-tiedot">Tiedot kerätään, jotta voimme seurata ilmoitusten määrää
+                     ja osaamme
+                    varautua ruokavalioihin. Lempitanssisi saattaa päästä mukaan ohjelmaan.
+                </p>
+                
+                <p class="form-label">Seurueen koko (pakollinen)</p>
+                <input id="koko" type="text" placeholder="Vastaa numerolla" 
+                style="max-width: 20rem; height: 1.5rem; margin-bottom: 1rem;">
+                
+                <p class="form-label">Erityisruokavaliot (Jätä tyhjäksi, jos ei ole)</p>
+                <input id="ruokavalio" type="text" 
+                placeholder="Kirjoita ruokavaliot pilkulla erotettuina" 
+                style="max-width: 20rem; height: 1.5rem; margin-bottom: 1rem;">
+                
+                <p class="form-label">Lempitanssit (vapaaehtoinen)</p>
+                <input id="tanssi" type="text" placeholder="Kerro lempitanssisi" 
+                style="max-width: 20rem; height: 1.5rem; margin-bottom: 1rem;">
+                
+                <div id="ilmoitus"></div>
+                <button onclick="ilmoitaTila()"style="max-width: 15rem;">
+                    Lähetä ilmoitus
+                </button>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
