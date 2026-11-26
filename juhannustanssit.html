@@ -68,7 +68,7 @@
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
                 .tapahtuma-box {
                     display: flex;
@@ -80,10 +80,13 @@
                     max-width: 40rem;
                 }
                 .ilmoitus-tiedot {
+                    font-family: Noto serif;
                     margin: 0 0 0.5rem 0;
                 }
                 .form-label {
-                    margin: 0.5rem 0 0.2rem 0;
+                    font-family: Noto serif;
+                    margin-bottom: 0.5rem;
+                    margin-top: 0;
                 }
                 #ilmoittautumisen-tila {
                     font-family: Noto serif;
@@ -92,6 +95,11 @@
                     border-radius: 1rem;
                     border-color: red;
                 }
+                input {
+                    max-width: 25rem;
+                    height: 1.5rem;
+                    margin: 0px 0 24px 0;
+                }   
             }
             @media (max-width: 750px) {
                 button {
@@ -149,10 +157,12 @@
                     max-width: 40rem;
                 }
                 .ilmoitus-tiedot {
+                    font-family: Noto serif;
                     margin: 0 0 0.5rem 0;
                 }
                 .form-label {
-                    margin: 0.5rem 0 0.2rem 0;
+                    font-family: Noto serif;
+                    margin-bottom: 0.5rem;
                 }
                 #ilmoittautumisen-tila {
                     font-family: Noto serif;
@@ -160,6 +170,11 @@
                     color: #121212;
                     border-radius: 1rem;
                     border-color: red;
+                }
+                input {
+                    max-width: 25rem;
+                    height: 1.5rem;
+                    margin: 0px 0 24px 0;
                 }
             }
             
@@ -178,6 +193,7 @@
                     ilmoitus = ilmoitus +"VIRHE: Serueen koko-kenttä ei voi olla tyhjä! Syötä koko numerona.";
                 }
                 else {
+                    window.location.href = "kiitos.html";
                     ilmoitus = "Ilmoittautuminen onnistui tiedoilla: <br>"+
                     "Seurueen koko: "+koko+"<br>"+
                     "Erityisruokavaliot: "+ruoka+ "<br>"+
@@ -214,34 +230,30 @@
                     Kerrothan ruokavaliosi, jotta osaamme varautua.</p>
                 <p class="tapahtuma-kuvaus">Lisätietoja voi kysyä järjestön sihteeriltä, jonka yhteystiedot
                     löytyvät <a style="color:#0077b6;" href="">täältä</a>.
-                </p>
-                <p class="tapahtuma-hinta">Sisäänpääsymaksu on 5 euroa.</p>
+                </p> 
+                <p class="tapahtuma-kuvaus">Tapahtuma järjestetään <b>24.6.2024 klo 18:00 </b></p>
                 <p class="tapahtuma-osoite">Osoite: Tuppukyläntie 67, 28135 Tuppukylä</p>
+                <p class="tapahtuma-hinta">Sisäänpääsymaksu on 5 euroa.</p>
                 
-                <h2 class="ilmoittautuminen-label" style="margin-bottom: 0;">
+                <h2 class="ilmoittautuminen-label" style="margin-bottom: 1.5rem;">
                     Ilmoittautuminen</h2>
-                <p class="ilmoitus-tiedot">Tiedot kerätään, jotta voimme seurata ilmoitusten määrää
-                     ja osaamme
-                    varautua ruokavalioihin. Lempitanssisi saattaa päästä mukaan ohjelmaan.
-                </p>
-                
                 <p class="form-label">Seurueen koko (pakollinen)</p>
-                <input id="koko" type="text" placeholder="Vastaa numerolla" 
-                style="max-width: 20rem; height: 1.5rem; margin-bottom: 1rem;">
+                <input id="koko" type="text" placeholder="Vastaa numerolla">
                 
                 <p class="form-label">Erityisruokavaliot (Jätä tyhjäksi, jos ei ole)</p>
                 <input id="ruokavalio" type="text" 
-                placeholder="Kirjoita ruokavaliot pilkulla erotettuina" 
-                style="max-width: 20rem; height: 1.5rem; margin-bottom: 1rem;">
+                placeholder="Kirjoita ruokavaliot pilkulla erotettuina">
                 
                 <p class="form-label">Lempitanssit (vapaaehtoinen)</p>
-                <input id="tanssi" type="text" placeholder="Kerro lempitanssisi" 
-                style="max-width: 20rem; height: 1.5rem; margin-bottom: 1rem;">
+                <input id="tanssi" type="text" placeholder="Kerro lempitanssisi">
                 
                 <div id="ilmoitus"></div>
-                <button onclick="ilmoitaTila()"style="max-width: 15rem;">
+                <button onclick="ilmoitaTila()"style="max-width: 15rem; margin-bottom: 1rem;">
                     Lähetä ilmoitus
                 </button>
+                <p class="ilmoitus-tiedot">Tiedot kerätään, jotta voimme seurata ilmoitusten määrää
+                     ja osaamme varautua ruokavalioihin. Lempitanssisi saattaa päästä mukaan ohjelmaan.
+                </p>
             </div>
             </div>
         </div>
